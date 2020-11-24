@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 
+	 :even 필터 선택자란?
+	 -> 선택한 요소중에서  인덱스위치가 짝수인 요소를 모두 선택함
+	 
+	 :odd 필터 선택자란?
+	 -> 선택한 요소중에서 인덱스위치가 홀수인 요소를 모두 선택함
+	 
+	 예제주제 : <table>태그 내의 짝수 번째 행에는 배경색을 green으로 설정하고
+	                홀수번째 행에는 글꼴 크기를 20px로 설정 하는 예제.
+	 
+ -->		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			$(function() {
+				
+					$("tr:even").css("background-color","#bbf");
+					
+					$("tr:odd").css("font-size","20px");
+			});
+		
+		</script>
+</head>
+<body>
+		<table border="1">
+			<tr><td>인덱스0</td></tr>
+			<tr><td>인덱스1</td></tr>
+			<tr><td>인덱스2</td></tr>
+			<tr><td>인덱스3</td></tr>					
+		</table>
+
+
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+//keydown(function)	메소드
+// - 대상 태그에 사용자가 키보드를 누르는 순간 이벤트가 발생하면 function을 실행하는 메소드이다.
+// - 포커스를 가질수 있는 태그에만 발생할수 있는 이벤트로서,
+//   일반적으로 <form>태그  내의 태그에서 많이 사용된다.
+// - 만약 키보드를 계속적으로 누르고 있으면? 반복적으로 keydown이벤트가 발생한다.
+		
+		
+//주제 : <input>태그에 포커스를 지정하고 키보드의 키를 누르는 순간 
+//      입력한 값의 키코드(keycode)값을 얻어 div태그영역에 출력하는 예제
+
+//참고 : 키보드의 키에는 모두 특정값이 맵핑 되어 있다
+//     예를 들어  'a' 키는 숫자로 65이다
+//     만약 눌러진 키를 확인 하려면
+//     event객체의 keyCode속성의 값을 얻어 사용하면 키보드의 모든 키의 값을 알아 낼수 있다.
+
+	$(function(){
+			//<input>을 선택해 포커스를 지정하고  키보드의 키를 누르는 순간
+			$("#target").keydown(function(event){
+			
+				console.log(event);
+				
+				//<div>태그영역에 keyevent객체의 keycode속성값을 호출하면 
+				//누른 키에  대응 되는 값을 얻을수 있다.
+				$("div").text( event.keyCode );
+			});
+	});
+
+
+		</script>
+</head>
+<body>
+	<form>
+		<input id="target" type="text" value="">
+	</form>
+	<div></div>
+</body>
+</html>

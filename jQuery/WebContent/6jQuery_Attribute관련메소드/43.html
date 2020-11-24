@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		
+		<style type="text/css">
+			
+			.highlight{
+				background: yellow;
+			}
+		
+		</style>
+		
+		
+		
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		/*	
+			제이쿼리의 속성관련 메소드
+				
+			.toggleClass(className)메소드 
+		    
+			 - 선택된 요소에서 className에 해당하는 class속성값이 존재하면 제거하고,
+			      존재 하지 않으면 추가로 설정 시키는 메소드 
+			
+			  참고 : 결국 addClass(className)메소드와  removeClass(className)메소드를 
+			  	     번갈아 실행하는 것과 같다.
+			
+		*/
+			//주제 : <p>태그를 클릭하면 배경색을 yellow로 설정하는 class속성값을 번갈아 설정하거나
+			//      제거 하는 토글 예제.
+			
+			$(function(){
+					//모든 <p>태그를 선택해서 가져와서  click이벤트 등록
+					$("p").on("click",function(){
+						//click이벤트가 발생하는 <p>요소를 선택해서 가져와서 
+						//class속성값을 토글 시킨다.
+						//따라서 번갈아 배경색이 yello로 설정되었다가 해제 된다.
+						$(this).toggleClass("highlight");
+					});
+			});
+		</script>
+</head>
+<body>
+		<p>홍길동</p>
+		<p>이순신</p>
+		<p>유관순</p>
+</body>
+</html>
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		
+		$("h1").animate({marginLeft:"300px"},1000)
+			   .animate({marginLeft:0},1000);
+		
+		$("h2").animate({marginLeft:"300px"},1000)
+		   	   .animate({marginLeft:0},1000);
+		
+		$("h2").clearQueue();
+		
+//clearQueue()메소드의 실행원리
+//이메소드는<h2>태그에 가장먼저 적용되어 실행중인  
+//1초만에 오른쪾으로 300px만큼 이동되는 동작효과를 주는 부분만 제외하고
+//큐저장소에 대기중인 두번째 animate()메소드는 모두 !! 제거 됩니다.
+//결론 : 가장 처음 실행되는 animate()메소드만 실행되고  두번쨰 animate()메소드는 큐저장소에서 제거됨
+		
+		$("h3").animate({marginLeft:"300px"},4000);
+		
+		$("h3").finish();//모션 과정은 생략하고 우측으로 300px만큼 이동되어 있는 결과를 보여줌
+
+	});
+
+
+</script>
+		
+<style type="text/css">
+	h1{ width: 50px; height: 30px; background-color: red; font-size: 100%;}
+	h2{ width: 50px; height: 30px; background-color: orange; font-size: 100%;}
+	h3{ width: 50px; height: 30px; background-color: maroon; font-size: 100%;}
+
+</style>
+</head>
+<body>
+	<h1>내용</h1> 
+	<h2>내용</h2>
+	<h3>내용3</h3>
+</body>
+</html>
+
+
+

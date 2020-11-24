@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			/*
+				내용필터 선택자 중..
+				:empty -> 자식 요소가 존재하지 않고 텍스트값이 비어 있는 요소를 선택해서 반환함
+				
+						<input>, <img> , <hr> , <br> 태그등이
+						:empty필터 선택자에 의해서 선택되는 대표적인 태그요소들입니다.
+						
+			주제 : 텍스트 내용이 없는  <td>태그를 선택해서  문자열 "Was empty!"로  내용을 채우고
+				  배경색을 green으로 설정 하는 예제.
+			*/
+			$(function(){
+				//<td>태그 중에서  자식요소 및 텍스트값이 비어 있는 요소만? 선택하여 가져와서 
+				//문자열 "빈문자열"을 설정 하고 
+				//배경색을 green으로 설정 함.
+				$("td:empty").text("빈문자열").css("background-color","green");		
+			});
+			
+		</script>
+</head>
+<body>	
+	<table border="1">
+		<tr><td>TD #0</td><td></td></tr>
+		<tr><td>TD #2</td><td></td></tr>
+		<tr><td></td><td>TD#5</td></tr>
+	</table>
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+<!-- 
+		기본 선택자 종류
+		
+		특정 ID선택자  ->  $("#id속성값")
+		: HTML태그의 구조를 탐색하여 지정된 id속성값과 일치하는 모든 요소만 Jquery객체로 반환한다.
+		  지정한 id속성값에 해당하는 DOM을 탐색하기 위해서 # 기호를 같이 사용 한다.
+
+        : 이선택자는 javascript의 getElementById()메소드와 같은 기능을 수행한다.
+                  하나의 웹 페이지 내에서 모든 요소는 유일한 id속성값을 가져야 합니다.
+ 		    만약 동일한 id속성값을 가진 요소가 여러 개 존재한다면 DOM에서 가장 첫번째로 만나는 요소가 선택 된다.
+ -->				
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			//HTML문서내의 모든 요소가 웹브라우저에 로드되면 
+			//자동으로 ready()함수가 실행되어  function콜백함수의 구문이 실행됨.
+			$(document).ready(function(){
+				
+				//모든 요소 중에서 id속성값이 "target"인?태그를 선택해서 가져와서 
+				//글자색을 red로 설정
+				$("#target").css("color","red");
+				
+				//id속성값이 target인? <div>요소를 선택해서 가져와서
+				//text()메소드를 이용하여 <div>요소 내부의 텍스트 값 DIV2만 얻어와 경고메세지창에 출력
+				alert(  $("#target").text() );
+				
+				//id속성값이 target인? <div>요소를 선택해서 가져와서
+				//html()메소드를 이용하여 <div>요소 내부의 html태그를 포함한? 텍스트값 DIV2를 얻어 
+				//경고 메세지 창에 출력
+				alert(  $("#target").html() );
+				
+			});
+		
+		</script>
+</head>
+<body>
+		<div>DIV1</div>
+		<div id="target"><h1>DIV2</h1></div>
+		<span>SPAN</span>
+		
+</body>
+</html>
+
+
+
+

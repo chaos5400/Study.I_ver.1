@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+<!-- 
+		기본 선택자 종류
+		클래스 선택자 -> $(".class속성의값")
+	    : HTML태그의 구조를 탐색하여  지정된 class속성의 값과 일치하는 요소들만 배열로 반환 한다.
+	          지정한 class속성값에 해당한느 DOM을 선택하기 위해서  .(dot)을 같이 사용 한다.
+
+		: id선택자와는 다르게  class선택자는 동일한 속성값을 여러 태그에 중복해서 사용할수 있다.
+		  또한, 모든 태그에는 기본적으로 하나 이상의 class속성값을 가질수 있으며,
+		  그중에서 하나만 일치하면 된다.
+		  
+		:이선택자는  javascript의 getElementByClassName()메소드와 동일한 기능을 수행 한다.
+		
+	예제 주제
+	-> HTML문서의 태그중에서. class속성의 값이 myClass를 가진 태그들을 선택하여 글자색을 red로 변경하고
+	     반환된 태그의 텍스트내용을 콘솔에 출력하는 예제.
+		
+ -->				
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			
+				$(document).ready(function(){
+					//클래스 속성값이  myClass인? 태그만 선택하여  글자색을 red로 설정
+					$(".myClass").css("color","red");
+					
+					//클래스 속성값이 myClass를 가진 태그들 중에서 첫번째 태그의 텍스트 내용을 얻어 
+					//웹브라우저의 console탭에 로그로 출력
+					console.log( "첫번째 .myClass인 태그의 텍스트값 : " + $(".myClass").first().text() );
+					
+					//클래스 속성값이 myClass를 가진 태그들 중에서 마지막 태그의 텍스트 내용을 얻어 
+					//웹브라우저의 console탭에 로그로 출력
+					console.log("마지막 .myClass인 태그의 텍스트값 : " + $(".myClass").last().text() );
+					
+					//참고
+					//필터링 관련 메소드란? 일차적으로 선택자에 의해 반환된 결과 태그에서 
+							         //다시 추가적으로 필터링 작업을 할때 사용하는 메소드 
+					//.first() : 첫번째 태그 선택해서 반환
+					//.last() : 마지막 태그 선택해서 반환
+					
+				});
+		
+		</script>
+</head>
+<body>
+	<div class="notMe">div class="notMe"</div>
+	<div class="myClass">div class="myClass"</div>
+	<span class="myClass">span class="myClass"</span>
+	
+</body>
+</html>

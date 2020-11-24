@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		//주제 : button을 클릭했을때, <input>태그에 어떤값을 입력 해야 하는지를?
+		//      custom event와  trigger()메소드를 사용하여 문자열로 알려주는 예제.
+		
+		$(function(){
+			
+			//아래의 <button>press</button>버튼을 클릭하면
+			$("button").on("click",function(){
+				
+				//태그 속성중 name=message인 <input>태그를 선택하여
+				//커스텀이벤트인? myCustom이벤트를 trigger()메소드로 강제 실행한다.
+				//따라서 25행의 myCustom이벤트로 등록된 이벤트핸들러가 자동으로 실행되어
+				//[name=message]를 가진 <input>태그의 값으로 "메세지를 입력하세요"라는 문자열이 설정됨
+				$("[name=message]").trigger("myCustom");
+			});
+			//name속성값이 message인? <input>을선택해서 가져와서
+			//custom event인? "myCustom"라는 이름으로 이벤트를 등록함.
+			$("[name=message]").on("myCustom", function(){
+				
+				$(this).val("메세지를 입력하세요");
+			});
+			
+			//name속성값이 message인? <input>을 선택해 포커스 이벤트를 등록 하여 
+			//포커스가 발생 했을때..
+			$("[name=message]").on("focus",function(){
+				
+				//포커스이벤트가 발생한 <input>을 선택해서 가져와서
+				//빈문자열로 "" value속성값을 설정하여 기존에 힌트 메세지를 없애자
+				$(this).val("");
+			});
+			
+			
+		});
+		</script>
+</head>
+<body>
+		<input type="text" name="message" id="message">
+		<button>press</button>
+</body>
+</html>
+
+
+
+
+

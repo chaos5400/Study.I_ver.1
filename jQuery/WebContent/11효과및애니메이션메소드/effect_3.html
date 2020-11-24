@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			//fadeTo()  : 노출되어 있던 요소에 투명도를 지정한 만큼 숨김.
+			//투명도는 0부터 1사이 까지 값을 입력 할수 있으며,
+			//숫자가 1에 가까울 수록 선명하게 보입니다.
+			//가령, 50%만큼 투명도를 적용하려면 0.5를 입력하면 됩니다.
+			
+			$(function(){
+				//투명도(30%) 버튼을 클릭했을때
+				$("#btn1").on("click",function(){
+					//<h1>요소가 30%만큼만 노출되게 하기 
+					$("h1").fadeTo("slow",0.3);
+				});
+				//투명도(100%)버튼을 클릭했을때
+				$("#btn2").click(function(){			
+					//<h1>요소를 선택해  100% 선명하게 모두 노출 시키기
+					$("h1").fadeTo("slow",1);			
+				});		
+			});
+		</script>
+</head>
+<body>
+	<button id="btn1">투명도(30%)</button>
+	<button id="btn2">투명도(100%)</button>
+	<h1>내용</h1>
+</body>
+</html>
+
+
+
+
+
+

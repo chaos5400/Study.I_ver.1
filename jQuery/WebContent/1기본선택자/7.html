@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+<!-- 
+	다중 선택자  ->  $("#id속성값, .class속성값, 선택해올 태그명3 ")
+	: 한꺼번에 여러개의 HTML구조를 탐색하는 방법으로  ,(쉼표)를 사용 한다.
+	: 이때 각 요소는 반드시 태그명이 아니어도 상관없으며 , 
+	   앞에서 배운 class속성 및 id속성도 사용할수 있다.
+	
+	예제 주제 : HTML문서에 사용된 서로 다른 태그들을 한꺼번에 선택하여 가져와서
+	                동일한 CSS스타일을 설정 하는 예제.
+ -->		
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			//웹브라우저가 7.html내부의 HTML태그들을 모두 로딩했을때..
+			$(function(){
+				//<div>와 <span>태그 그리고 class속성값이 myClass인 <p>태그를 선택하여
+				//글자색을 red로 변경
+				//<p class="notMyClass">태그는 선택에 제외되어 CSS스타일이 적용되지 않는다.
+				$("div, span, p.myClass").css("color","red");
+				
+			});
+		
+		</script>
+</head>
+<body>
+	<div>div</div>
+	<p class="myClass">p class="myClass"</p>
+	<p class="notMyClass">p class="notMyClass"</p>
+	<span>span</span>
+</body>
+</html>
+
+
+
+
+

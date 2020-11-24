@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+	<style type="text/css">
+			
+			.size{
+				margin: 8px;
+				font-size: 16px;
+			}
+		
+			.selected{
+				color : red;
+			}	
+			
+			.highlight{
+				background: yellow;
+			}
+		</style>	
+		
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			/*
+				.removeClass(제거시킬 class속성값) 메소드
+					- 선택된 요소에서 class속성값을 제거 시킬때 사용함.
+					- 동시에 여러개의 class속성값을 제거 할수도 있다.
+				
+			*/
+		
+			$(function() {
+				//첫번째 <p>태그를 선택해  class속성값인? highlight를 제거 한다.
+				//따라서 <p>태그의 class속성값은 size만 남아 적용 된다.
+				$("p:first").removeClass("highlight");
+				
+				//마지막 <p>태그를 선택해 
+				//class속성값인? selected와  highlight를 제거함.
+				$("p:last").removeClass("selected highlight");		
+			});
+		
+		</script>
+</head>
+<body>
+		<p class="size highlight">홍길동</p>
+		<p>과</p>
+		<p class="size selected highlight">이순신</p>
+		
+</body>
+</html>
+
+
+
+
+

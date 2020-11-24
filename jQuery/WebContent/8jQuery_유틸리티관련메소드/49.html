@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			/*	
+				jQuery 유틸리티 관련 메소드란?
+				- jQuery를 이용하여 코드를 작성할때 배열을 순회하거나
+				  배열을 필터링 하거나 또는 배열형식으로 변경하거나,
+				  배열 복제, 데이터의 공백 제거,  .xml파일 및  .json파일의 파싱 처리 방법과 같은
+				 프로그램을 개발할때 효율적으로 사용 가능한 유틸리티 메소드를 말함.
+				 
+				 jQuery.each(object, function)메소드
+				 
+				 - 배열 및 Map형태의 반복되는 데이터를 순회하면서 값을 얻어온다.
+				   function내에서 false를 반환하여 반복 순회를 중지 한다.
+			*/
+//주제 : 5개의 문자열이 저장된 배열과  5개의 key/value형식 저장된 JSON객체의 데이터를
+//     jQuery.each()메소드를 사용하여 순회하면서 데이터를 얻어 콘솔에 출력 하는 예제.
+				$(function(){
+					//5개의 데이터를 가진 문자열 배열을 생성함.
+					var arr = ["one","two","three","four","five"];
+					
+					//배열을 순회하면서 데이터를 출력하기 위해 jQuery.each()메소드를 사용한다
+					//첫번째 인자에는  순회할 배열을 지정하고,
+					//두번째 인자에는 함수function를 지정한다.
+					//function의 첫번째 인자인 idx는 배열의 index위치값으로 0부터 시작되고,
+					//function의 두번쨰 인자인 obj는 idx변수에 전달된 index위치에 해당하는 값이 전달된다.
+					jQuery.each(arr,function(idx,obj){
+						
+						console.log("index:" + idx + "\t value:" + obj);
+					});
+					
+					//key:value을 쌍으로 저장하는 메모리 공간인? Map형식의  JSON객체를 생성한다.
+					var  m = { one:1,  two:2, three:3, four:4, five:5 };
+					
+					//Map형식의 데이터를 순회하면서 데이터를 얻어 출력하기 위해서는 
+					//jQuery.each()메소드를 사용한다.
+					//첫번째 인자에는 Map을 지정하고 
+					//두번째 인자에는 function함수를 지정한다.
+					//함수의 첫번째 인자인 key는 Map형식의 key값이고,
+					//함수의 두번째 인자인 obj는  key위치에 해당되는 실제 데이터 값이다.
+					jQuery.each(m,function(key,obj){
+						
+						console.log("key:" + key + "\t value:" + obj);
+					});
+					//크롬 웹브라우저로 실행한후  F12를 눌러 console탭에서 확인 하자
+				
+				});
+			
+		
+		</script>
+</head>
+<body>
+
+</body>
+</html>

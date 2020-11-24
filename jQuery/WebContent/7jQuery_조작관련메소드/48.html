@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			/*
+				.clone() 메소드
+				- 선택된 요소를 복제 한다.
+				   이때 복제되는 요소는 모든 하위 요소까지도 포함된다.
+			*/
+			//class속성값이 hello인 요소 <div class="hello">이순신</div>를 복제하여
+			//class속성값이 goodbye인 <div class="goodbye">요소에 추가한다.(보낸다)
+			$(function(){
+					$(".hello").clone().appendTo(".goodbye");
+			});
+		</script>
+</head>
+<body>
+	<div class="container">
+		<div class="goodbye">
+			홍길동 <div class="hello">이순신</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+

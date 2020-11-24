@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 
+		:first 필터선택자
+		- 선택한 요소중에.. 첫번째 요소를 다시 선택해서 반환
+		
+		:last 필터선택자
+	 	- 선택한 요소중에.. 마지막 요소를 다시 선택해서 반환
+ -->		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			$(function() {
+				//모든 <tr>태그를 선택해서 가져와 그중에서..첫번째 <tr>태그를 최종 선택
+				$("tr:first").css("background-color","#bbf");
+				
+				//모든 <tr>태그를 선택해서 가져와 그중에서 .. 마지막에 존재하는<tr>태그를 최종선택
+				$("tr:last").css("font-style","italic");
+				
+					
+			});
+		
+		</script>
+</head>
+<body>
+		<table border="1">
+			<tr><td>인덱스0</td></tr>
+			<tr><td>인덱스1</td></tr>
+			<tr><td>인덱스2</td></tr>
+			<tr><td>인덱스3</td></tr>					
+		</table>
+
+
+</body>
+</html>
+

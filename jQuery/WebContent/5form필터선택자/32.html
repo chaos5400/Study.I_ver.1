@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+/*
+ 		<form>태그 관련 필터 선택자중.. 
+ 		
+ 		내용필터 선택자 : 특정요소의 텍스트내용과 일치하는 요소 또는 일치하지 않는 요소를 찾아서 선택
+ 		
+ 		:contains(text)  ->  지정된 text와 일치하는 문자열이 존재하는 요소를 반환함. 대소문자 구별함
+ 		
+ 		:empty  ->  자식요소가 존재하지 않고  텍스트내용이 비어 있는 요소를 반환함.
+ 		
+ 		:has(selector) -> 지정된 selector가  자식요소로 존재하는 모든 요소를 반환함.
+ 		
+ 		:parent    -> 자식요소가 존재하거나 , 텍스트값을 가지고 있는 요소를 반환함.
+ 		
+ */
+			$(function(){
+				//<div>태그의 내용중에 "John"문자열을 포함하는 태그를 선택해서 가져와서
+				//텍스트 글자에 밑줄(underline)을 설정
+				$("div:contains('John')").css("text-decoration","underline");
+			});	
+		</script>
+</head>
+<body>
+			<div>John Resig</div>
+			<div>George Martin , john</div>
+			<div>Malcom John Sinclair</div>
+			<div>J. Ohn</div>
+			<div>
+				<span>Mr. John </span>
+			</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

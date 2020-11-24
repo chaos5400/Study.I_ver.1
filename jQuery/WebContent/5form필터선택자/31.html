@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			
+		/*
+			:selected 필터 선택자
+			-> 이선택자는  <select>태그의  하위 태그로 사용하는 <option>태그중에서
+			      선택된 태그 요소를 반환함.
+			-> <input>태그의 type속성값이 checkbox이거나 radio인 경우는 동작하지 않고
+			    오직 <select>태그에서만 동작하기 떄문에 주의 해야함.
+			    
+			주제 : <select>태그에서 선택한 옵션의 텍스트값을 얻어 출력하는 예제.
+		*/
+		
+			 $(function(){
+				 //<select>태그를 선택해서 가져와서
+				 //이후 <select>태그의 하위 항목인 <option>태그를 선택하면
+				 //(다른옵션을 선택하여 변화가 일어나면?)
+				 $("select").change(function(){
+					 
+					 //선택된 <option>태그의 텍스트값을 얻어 data변수에 저장
+					 var data = $(":selected").text();
+					 
+					 //data변수에 저장된 값을 <span>태그영역에 텍스트값으로 설정 하여 출력
+					 $("span").text(data);
+				 });
+			 });
+		</script>
+</head>
+<body>
+		<form>
+			<select name="phone">
+				<option>010</option>	
+				<option selected="selected">011</option>
+				<option>02</option>
+			</select>
+		</form>
+		
+		선택된 값 : <span></span>
+
+</body>
+</html>
+
+
+

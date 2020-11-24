@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			$(function(){
+				/*
+					.remove(selector)메소드
+					- 선택된 모든 요소를 제거 한다.
+					    만약 selector가 지정되면 selector와 일치하는 요소가 제거 된다.
+				*/
+				//모든 <div>태그중에서 ..class속성값이 hello인 모든 태그를 삭제 한다.
+				$("div").remove(".hello");
+			});
+		</script>
+</head>
+<body>
+		<div class="container">
+			<div class="hello">이순신</div>
+			<div class="goodbye">강감찬</div>
+		</div>
+
+</body>
+</html>
+
+

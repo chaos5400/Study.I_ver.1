@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+<!-- 
+	jQuery 속성선택자 종류
+	
+		Attribute Contains Selector
+		지정된 속성의 값이 정확하게 일치하지 않지만 지정된 값을 포함하는 요소를 검색하고 
+		공백으로 정확하게 구분된 속성값을 갖는 요소를 검색
+		
+		사용법
+			$("selector[attr *= 'value']")
+			$("selector[attr ~= 'value']")
+			->정확하게 일치하지는 않지만 지정된 속성값의 일부로 포함하는 요소 검색에는 *=  
+			  공백으로 정확하게 구분된 요소 검색에는 ~= 연산자를 사용함.
+
+ -->		
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+	
+			$(function() {
+				//<input>태그중에서 name속성의 값에 문자열 "man"이 포함된 요소를 선택해옴
+				$("input[name *= 'man']").val("man 글자 포함");
+				
+				//<input>태그중에서 name속성의 값에 공백 구분자를 가진 문자열 "man"이 포함된 요소를 선택해옴
+				$("input[name ~= 'man']").css("border","3px solid red");
+				
+			});
+		</script>
+</head>
+<body>
+	<input name="man-news">
+	<input name="milk man">
+	<input name="letterman2">
+	<input name="newmilk">	
+	<input name="superman">
+</body>
+</html>
+

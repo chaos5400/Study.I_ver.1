@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 
+	jQuery 속성선택자 종류
+	
+	 Multiple Attribure  / Attribute Contains Prefix   
+	 
+	 사용법
+	 	$("selector[attr1='value1'][attrn='valueN']")
+		$("selector[attr  |=  'value']")
+
+		-> 한꺼번에 속성을 여러개 지정하는 방법은 [속성명=값] 형식을 반복적으로 나열해서 사용하면 되고
+		   속성값에 '-'하이픈이 포함된 요소를 검색하기 위해서는 공백으로 정확하게 구분된 요소 검색에는
+		  |= 연산자를 사용함.
+
+ -->		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+		<input name="man-news" id="man-new" value="en">
+		<input name="milkman" value="kr">
+		<input id="letterman" name="new-letterman" >
+		<input id="newmilk" value="en-UK">
+		
+		<script type="text/javascript">
+	
+			//<input>태그중에서 id속성을 가지고 있으며  name속성값이 문자열"man"으로 끝나는 요소를 선택
+			//선택된 요소의 value속성값에  "has man in it"문자열을 설정 한다.
+			$("input[id][name $= 'man']").val("has man in it");
+			
+			
+		//<input>태그중에서 value속성의 값에 문자열 "en" 또는 "en-" 이 포함된 요소를 선택 하여
+		//빨간색 점선을 3px굵기로 설정
+			$("input[value |= 'en']").css("border","3px dotted red");
+		
+		</script>
+</body>
+</html>
+
+

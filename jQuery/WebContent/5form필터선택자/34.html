@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		/*
+			내용필터 선택자 종류
+			
+			:has(selector)  ->  지정된 selector를 포함하는? 모든 요소를 반환함.
+		
+			주제 : <p>요소를 포함하는 <div>태그를 선택하여 가져와서 배경색을 green으로 설정 하는 예제
+		*/
+			$(function() {
+				//<div>태그 내에 자식 태그로 <p>태그를 포함하는 모든 태그를 선택하여 
+				$("div:has(p)").css("background-color","green");
+			});
+		
+		
+		</script>
+</head>
+<body>
+			<div><p>홍길동</p></div>
+			<div>이순신</div>
+</body>
+</html>
+
+
+

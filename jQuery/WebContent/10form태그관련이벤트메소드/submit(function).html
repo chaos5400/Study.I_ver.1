@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+			/*
+				.submit(function) 메소드
+				- 대상 요소에서 submit이벤트가 발생하면 function을 실행 하는 메소드 이다.
+				   이메소드는  .on("submit",function(){}) 메소드와 동일하며
+				   인자없는 .submit()메소드는  .trigger("submit")메소드를 줄여서 표현한것이다.
+				- submit이벤트는 사용자가<form>태그의 submit할때만 발생하는 이벤트로서
+				  명시적으로 <input type="submit">인 요소와
+				  <input type="image"> 그리고
+				  <button type="submit"> 요소를 클릭하거나 엔터키를 눌렀을때
+				  제한적으로 발생하는 이벤트 이다.
+				  
+				주제 : <form>태그의 요청하는 값을 전송하기 전에  입력한 값을 비교하여
+				     OK 문자열을 입력하면  "성공"문자열을 출력하고
+				         아니면, "실패"문자열을 출력하는 예제.
+			
+			*/
+			$(document).ready(function(){
+				//id속성값이  target인 <form>태그를 선택해서 가져와서 
+				//test.jsp로 요청값을 전송하기 위해 [Go]버튼을 클릭했을때..
+				$("#target").submit(function(event){
+					
+					
+					
+					var mesg = "실패";
+					//<form>태그 내부의 type이  text인 <input>태그에 입력한값이 'OK'라면?
+					if($(":text").val() == 'OK'){
+						//성공 문자열을 저장
+						mesg = "성공";
+					}
+					//<div>태그에 "성공" 문자열을 출력하고
+					$("div").text(mesg);
+					
+					//preventDefault()메소드를 호출하면 실제로 전송되기 전에 취소되어 
+					//전송을 차단 시킨다
+ 					event.preventDefault();						
+				});			
+			});
+		</script>
+</head>
+<body>
+	OK입력하면  '성공' 출력하고  아니면 '실패' 출력
+	<form action="test.jsp" id="target">
+		<input type="text" value="">
+		<input type="submit" value="Go">
+	</form>	
+	<div></div>
+		
+</body>
+</html>
+
+
+
+

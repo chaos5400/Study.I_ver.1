@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+/*
+	제이쿼리 속성 관련 메소드 
+	
+	.removeAttr(속성명) 메소드는  지정된 속성명과 일치하는 속성을 제거 한다.
+			
+	주제 : [전체해제]버튼을 클릭했을때 체크되어 있던 모든 체크박스의 체크를 해제 하고,
+		   반대로 [전체선택]버튼을 클릭했을때 해제되어 있던 모든 체크박스의 체크를 할수 있도록 하는 예제.
+*/
+		$(function(){
+			//id속성값이  allunCheck인? <button>태그를 선택해서 가져와서 
+			//click이벤트를 등록함.
+			$("#allunCheck").on("click",function(){
+				
+				//기본적으로 체크되어 있던 모든 <input type="checkbox">를 선택해서 가져와서
+				//모든 체크박스 태그에 체크가 해제되게 하기 위해 checked속성을 제거 함.
+				$("input").removeAttr("checked");
+				
+			});
+			
+			//전체선택 버튼을 클릭했을때..
+			//모든 <input>이 체크되게 하기 
+			$("#allCheck").click(function(){
+			//[전체선택]버튼을 클릭했을때 해제 되어 있던 checkbox에 checked속성을 설정 하기 위해
+			//.attr("설정할 속성명","설정할 값")메소드를 사용하여
+			//checked속성에 checked값을 설정하여 모든 checkbox가 체크된 상태로 화면에 보여지게함
+				$("input").attr("checked","checked");
+			});
+			
+			
+		});
+	</script>
+</head>
+<body>
+	<button id="allunCheck">전체해제</button>
+	<button id="allCheck">전체선택</button>  <br>
+	사과 <input type="checkbox" name="apple" checked="checked"> <br>
+	바나나<input type="checkbox" name="banana" checked="checked"> <br>
+	오렌지<input type="checkbox" name="orange" checked="checked"> <br>
+		
+</body>
+</html>
+
+

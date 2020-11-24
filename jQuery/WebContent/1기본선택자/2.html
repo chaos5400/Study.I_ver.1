@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- Jquery사용을 위한 CDN방식의 주소 이용 -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script type="text/javascript">
+	/*
+		Jquery에서 제공해 주는 기본 선택자 종류
+		
+			* <--- 모든 요소 선택자
+		
+			의미 : HTML태그의 구조를 탐색하여 모든 요소를 담은 배열 형식의 Jquery객체로 반환합니다.
+	*/
+		$(document).ready(function(){
+			
+			//모든 요소 선택자  * 를 이용해 아래의 모든 HTML요소들을 선택해옴
+			//선택해 온 모든 요소의 글자색상을 red로 설정
+			$("*").css("color","red");
+			
+// 			$("선택자종류")
+		});
+	</script>
+</head>
+<body>
+	<!-- 
+		HTML DOM을 탐색하여 모든 요소의 글자색을? 'red'색상으로 변경하여 출력하는 예제.
+		CSS스타일 변경을 위해서는 jQuery의 CSS(속성명,속성값)메소드를 사용 한다.
+		CSS메소드의 첫번쨰 인자는 스타일 속성명을 지정하고,
+		두번째 인자에는 스타일의 속성값을 명시 한다.
+	 -->
+	
+	<div>DIV</div>
+	<span>SPAN</span>
+	<p>P<button>Button</button></p>
+	
+</body>
+</html>

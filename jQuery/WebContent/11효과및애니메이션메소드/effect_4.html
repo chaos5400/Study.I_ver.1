@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+
+				$(function(){
+					//sileUp버튼을 클릭했을때
+					$("#btn1").on("click",function(){
+						//<h1>을 선택해서 1초동안 위로 접히면서 숨김
+						$("h1").slideUp(1000);
+					});
+					//slideDown버튼을 클릭 했을때
+					$("#btn2").on("click",function(){
+						//<h1>을 천천히 아래로 펼쳐지며 노출
+						$("h1").slideDown("slow");
+					});
+					
+					//slideToggle버튼을 클릭할떄마다 
+					$("#btn3").click(function() {
+						
+						//<h1>을 빠르게 숨겨졌다가 보이게 만들기 
+						$("h1").slideToggle("fast");
+						
+					});
+					
+					
+				});
+		
+		
+		</script>
+		<style type="text/css">
+			h1{
+				width: 300px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+</head>
+<body>
+	<button id="btn1">slideUp</button>
+	<button id="btn2">slideDown</button>
+	<button id="btn3">slideToggle</button>
+		
+	<h1>내용</h1>	
+		
+</body>
+</html>
+
+
+
+
+
+
+

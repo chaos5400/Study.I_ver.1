@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		/*
+			제이쿼리의 속성관련 메소드(함수)
+			
+			제이쿼리 속성과 관련된 메소드 종류 보는 방법
+			-> 주소 : https://api.jquery.com/category/attributes/  
+			
+			.attr(속성명)  메소드 
+				-> 지정된 속성명에 해당하는 속성의 값을 반환함.
+				      일치하는 요소가 맞으면, 처음 일치하는 요소가 반환된다.
+		
+		     $("img").attr("src")
+		     
+		     <img src="a.jpg"/>
+			-------------------------------------------------------
+			
+			.attr(속성명,속성값) 메소드
+				-> 지정된 속성명에 속성값을 설정 하는 메소드 
+				
+			$("input").attr("name","바보")	
+			
+			<input type="text" name="">
+			------------------------------------------------------
+			
+			결론 : 따라서 태그의 특정 속성값을 가져오기 위해서는  .attr(속성명)메소드를 사용하고,
+			         속성값을 설정 하기 위해서는 .attr(속성명,속성값)메소드를 사용한다.			
+			
+			주제 : 버튼을 클릭할때  기존 <img>태그의 속성인? src , width, height를 변경하여
+				  새로운 이미지 파일을 보여주는 예제.
+		*/
+			$(function(){
+				//<button>을 선택해서 가져와서  click이벤트를 등록함.
+				$("button").on("click", function(){
+					//<img>태그를 선택해서 가져와서 src속성값을 "korea.png"문자열로 설정하고,
+					//width와 height속성을 각각 200으로 설정 함.
+				 	$("img").attr( {src:"korea.png", width:200, height:200}  );	
+					
+					//<img>태그를 선택해 src속성값을 얻어 웹브라우저의 console탭에 로그로 출력
+					console.log( $("img").attr("src")    );
+				});
+				
+			});
+		</script>
+</head>
+<body>
+		<img src="france.png" width="100" height="100">
+		<button>이미지 변경</button>
+</body>
+</html>
+
+
+

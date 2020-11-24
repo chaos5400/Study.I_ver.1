@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		
+		<!-- 
+			계층 선택자 종류
+			
+			자식선택자(Child Selector)  ->  $("parent > child")
+			: HTML DOM을 탐새하여 부모(parent)요소의 모든 자식(child)요소를 선택해서 반환함
+			
+			예제 주제 : 
+			<ul>태그의 자식인 모든<li>태그를 선택하여 border스타일을 설정 하는 예제
+			자식 <li>태그 내의 중첩된 또다른 <li>태그는 자식이 아닌 자손이기 떄문에 스타일 설정에서 제외됨
+		 -->
+		
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			
+		$(function() {
+			
+			//class속성값이 topnav인 <ul>요소를 선택해  <ul>의 모든 자식 요소를 선택해 border속성값을 설정
+			$("ul.topnav  > li").css("border","3px double red");	
+						
+			//F12를 눌러 웹브라우저의 console탭에 로그 확인 
+			console.log(  $("ul.topnav > li").length );
+		
+		});
+		
+		</script>
+</head>
+<body>
+		<ul class="topnav">
+			<li>아이템1</li>
+			<li>아이템2
+				<ul>
+					<li>중첩된 아이템1</li>
+					<li>중첩된 아이템2</li>
+					<li>중첩된 아이템3</li>
+				</ul>
+			</li>
+			<li>아이템3</li>	
+		</ul>
+
+</body>
+</html>
+
+
+
+
